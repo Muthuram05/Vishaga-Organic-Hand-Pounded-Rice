@@ -15,7 +15,9 @@ def init_db_for_products():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 name TEXT NOT NULL,
                 prize REAL NOT NULL,
-                details TEXT
+                details TEXT,
+                line_description TEXT, 
+                benefit TEXT
             )
         ''')
         cursor.execute('''
@@ -33,6 +35,8 @@ def upload():
     name = request.form.get('name')
     prize = request.form.get('prize')
     details = request.form.get('details')
+    line_description = request.form.get('lineDescription')
+    benefit = request.form.get('benefit')
     images = request.files.getlist('images')
 
     if not (name and prize and details):
@@ -41,7 +45,7 @@ def upload():
     # Store product details
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
-        cursor.execute('INSERT INTO products (name, prize, details) VALUES (?, ?, ?)', (name, prize, details))
+        cursor.execute('INSERT INTO products (name, prize, details, line_description, benefit) VALUES (?, ?, ?, ?, ?)', (name, prize, details, line_description, benefit))
         product_id = cursor.lastrowid
 
         # Save images
@@ -137,6 +141,8 @@ def get_product(product_id):
             'name': product['name'],
             'prize': product['prize'],
             'details': product['details'],
+            'benefit': product['benefit'],
+            'line_description': product['line_description'],
             'images': image_urls
         })
 

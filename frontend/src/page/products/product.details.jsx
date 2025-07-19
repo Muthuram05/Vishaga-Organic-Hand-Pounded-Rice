@@ -70,32 +70,26 @@ export function ProductDetails() {
     <div className="product-details">
       <div className="product-main">
         <div className="product-image">
-          <img src={product.imageUrl} alt={product.name} />
+          {product.imageUrl && <img src={product.imageUrl} alt={product.name} />}
         </div>
         <div className="product-info">
           <h2>{product.name}</h2>
-          <p>{product.shortDescription}</p>
+          <p>{product.line_description}</p>
           <button onClick={handleOrder}>Add to cart</button>
         </div>
       </div>
 
       <div className="product-description">
         <h3>Description</h3>
-        <p>{product.description}</p>
+        <p>{product.details}</p>
       </div>
 
       <div className="product-benefits-vision">
         <div className="product-benefits">
           <h3>Benefits</h3>
           <ul>
-            {product.benefits?.map((b, i) => (
-              <li key={i}>{b}</li>
-            ))}
+            {product.benefit && <p>{product.benefit}</p>}
           </ul>
-        </div>
-        <div className="product-vision">
-          <h3>Vision</h3>
-          <p>{product.vision}</p>
         </div>
       </div>
     </div>
