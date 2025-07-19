@@ -4,6 +4,9 @@ import ImageUpload from "../admin/create.product";
 import riceBowl from "../assest/rice-bowl.png";
 import mission from "../assest/mission.png";
 import vision from "../assest/vision.png";
+import rice1 from "../assest/rice1.png";
+import rice2 from "../assest/rice2.png";
+import rice3 from "../assest/rice3.png";
 
 import "./home.css";
 export function Home() {
@@ -43,16 +46,16 @@ export function Home() {
         <h2>Featured Products</h2>
         <div className="products-grid">
           <div className="product-card">
-            <img src={riceBowl} alt="Long Grain" />
-            <h3>Long Grain</h3>
+            <img src={rice1} alt="Long Grain" />
+            <h3>Kattuyanam</h3>
           </div>
           <div className="product-card">
-            <img src={riceBowl} alt="Brown Rice" />
-            <h3>Brown Rice</h3>
+            <img src={rice2} alt="Brown Rice" />
+            <h3>Mappillai Samba</h3>
           </div>
           <div className="product-card">
-            <img src={riceBowl} alt="Organic Select" />
-            <h3>Organic Select</h3>
+            <img src={rice3} alt="Organic Select" />
+            <h3>Rathashali</h3>
           </div>
         </div>
       </section>

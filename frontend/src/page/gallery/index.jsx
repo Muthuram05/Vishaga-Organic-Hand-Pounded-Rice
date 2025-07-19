@@ -19,8 +19,8 @@ export function Gallery() {
   ];
 
   return (
-    <div>
-      <h1>Our processing Rice Journey</h1>
+    <div className="gallery-wrapper">
+      <h1 className="gallery-content">Our processing Rice Journey</h1>
       <div className="gallery-grid">
         {cards.map((card, index) => (
           <div className="gallery-item" key={index}>

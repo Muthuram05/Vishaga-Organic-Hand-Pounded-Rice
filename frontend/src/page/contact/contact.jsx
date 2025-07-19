@@ -43,25 +43,6 @@ export function Contact() {
           <button type="submit">Send</button>
         </form>
       </div>
-
-      <footer className="footer-links">
-        <div className="links-left">
-          <h3>Links</h3>
-        </div>
-        <div className="links-right">
-          <ul>
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-            <li>
-              <a href="#">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#">Terms of Service</a>
-            </li>
-          </ul>
-        </div>
-      </footer>
     </section>
   );
 }

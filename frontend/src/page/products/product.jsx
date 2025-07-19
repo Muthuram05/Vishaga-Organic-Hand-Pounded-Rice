@@ -23,14 +23,11 @@ export function Products() {
     <section className="products-wrapper">
       <h1>PRODUCTS</h1>
       <p>We offer pure, nutrient-rich handpounded rice, grown by local farmers and carefully processed to its wholesome goodness and traditional flavor.</p>
-      <button className="shop-button">SHOP NOW</button>
 
       <div className="products-grid">
         {products && products.map((product, index) => (
           <div className="product-card" key={index}>
-            {product.images && product.images.map((img, idx) => (
-              <img src={`${DOMAIN_URL}${img}`} alt={product.name} key={idx} />
-            ))}
+            {product.images && product.images[0] && <img src={`${DOMAIN_URL}${product.images[0]}`} alt={product.name} />}
             <div className="product-info">
               <h3>{product.name}</h3>
               <h3>{product.prize}</h3>
@@ -40,14 +37,12 @@ export function Products() {
                   <li key={idx}>{benefit}</li>
                 ))} */}
               </ul>
-              <Link className="order-button" to={`/product/${product.id}`}>ORDER</Link>
+              <Link className="order-button" to={`/product/${product.id}`}>Details</Link>
             </div>
           </div>
         ))}
       </div>
-      <footer className="footer">
-        <p>©2025 Company Name</p>
-      </footer>
+      
     </section>
   );
 }

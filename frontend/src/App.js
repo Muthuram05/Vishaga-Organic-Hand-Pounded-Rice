@@ -21,6 +21,7 @@ import { Profile } from "./page/profile";
 import { About } from "./page/about/index.jsx";
 import { AdminLogin } from "./page/admin/admin.login"; // Import AdminLogin
 import { DOMAIN_URL } from "./constant/index.js";
+import Footer from "./components/footer/index.jsx";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -163,9 +164,7 @@ function App() {
             }
           /> */}
         </Routes>
-        <footer className="footer">
-          <p>© 2025 Company Name</p>
-        </footer>
+        <Footer />
       </Router>
     </>
   );

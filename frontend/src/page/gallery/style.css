@@ -1,3 +1,14 @@
+.gallery-wrapper {
+ background-color: #f0d7aa;
+}
+
+.gallery-content {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .gallery-grid {
   display: flex;
   flex-wrap: wrap;
