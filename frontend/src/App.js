@@ -31,12 +31,12 @@ function App() {
     const checkLoginStatus = async () => {
       // Check user login status
       try {
-        const token = localStorage.getItem('auth_token');
+        const token = localStorage.getItem("auth_token");
         if (token) {
           const response = await fetch(`${DOMAIN_URL}check_login`, {
             headers: {
-              'Authorization': `Bearer ${token}`
-            }
+              Authorization: `Bearer ${token}`,
+            },
           });
           if (response.ok) {
             setIsLoggedIn(true);
@@ -47,7 +47,7 @@ function App() {
       }
 
       // Check admin login status from localStorage
-      if (localStorage.getItem('is_admin') === 'true') {
+      if (localStorage.getItem("is_admin") === "true") {
         setIsAdminLoggedIn(true);
       }
 
@@ -63,23 +63,44 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar setIsLoggedIn={setIsLoggedIn} isAdminLoggedIn={isAdminLoggedIn} isLoggedIn={isLoggedIn} setIsAdminLoggedIn={setIsAdminLoggedIn} />
+        <Navbar
+          setIsLoggedIn={setIsLoggedIn}
+          isAdminLoggedIn={isAdminLoggedIn}
+          isLoggedIn={isLoggedIn}
+          setIsAdminLoggedIn={setIsAdminLoggedIn}
+        />
         <Routes>
           {/* User Authentication Routes */}
           <Route
             path="/signup"
-            element={!isLoggedIn ? <Signup setIsLoggedIn={setIsLoggedIn} setIsAdminLoggedIn={setIsAdminLoggedIn} /> : <Navigate to="/home" />}
+            element={
+              !isLoggedIn ? (
+                <Signup
+                  setIsLoggedIn={setIsLoggedIn}
+                  setIsAdminLoggedIn={setIsAdminLoggedIn}
+                />
+              ) : (
+                <Navigate to="/home" />
+              )
+            }
           />
           <Route
             path="/login"
-            element={!isLoggedIn ? <Login setIsLoggedIn={setIsLoggedIn} setIsAdminLoggedIn={setIsAdminLoggedIn} /> : <Navigate to="/home" />}
+            element={
+              !isLoggedIn ? (
+                <Login
+                  setIsLoggedIn={setIsLoggedIn}
+                  setIsAdminLoggedIn={setIsAdminLoggedIn}
+                />
+              ) : (
+                <Navigate to="/home" />
+              )
+            }
           />
           <Route
             path="/profile"
             element={<Profile setIsLoggedIn={setIsLoggedIn} />}
           />
-          
-          
 
           {/* Admin Authentication Route */}
           <Route
@@ -96,15 +117,29 @@ function App() {
           {/* Admin Protected Routes */}
           <Route
             path="/admin/dashboard"
-            element={isAdminLoggedIn ? <AdminDashBoard /> : <Navigate to="/admin/login" />}
+            element={
+              isAdminLoggedIn ? (
+                <AdminDashBoard />
+              ) : (
+                <Navigate to="/admin/login" />
+              )
+            }
           />
           <Route
             path="/admin/product/:id/edit"
-            element={isAdminLoggedIn ? <EditProduct /> : <Navigate to="/admin/login" />}
+            element={
+              isAdminLoggedIn ? <EditProduct /> : <Navigate to="/admin/login" />
+            }
           />
           <Route
             path="/admin/create/product"
-            element={isAdminLoggedIn ? <CreateProduct /> : <Navigate to="/admin/login" />}
+            element={
+              isAdminLoggedIn ? (
+                <CreateProduct />
+              ) : (
+                <Navigate to="/admin/login" />
+              )
+            }
           />
 
           {/* Public Routes */}
@@ -128,6 +163,9 @@ function App() {
             }
           /> */}
         </Routes>
+        <footer className="footer">
+          <p>© 2025 Company Name</p>
+        </footer>
       </Router>
     </>
   );

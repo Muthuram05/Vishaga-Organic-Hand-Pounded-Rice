@@ -1,7 +1,11 @@
 .hero-content {
   display: flex;
   align-items: center;
-  padding: 40px 20px;
+  padding: 80px 40px;
+  background-image: url(../assest/home_cover.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hero-text {
@@ -28,9 +32,21 @@
   background-color: #244424;
 }
 
-.hero-image {
-  max-width: 350px;
-  border-radius: 8px;
+
+.hero-title {
+  font-size: 2.5rem;
+  color: var(--green-color);
+}
+
+.hero-button {
+  background-color: #0f400d;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 /* Mission and Vision */
@@ -38,7 +54,7 @@
   display: flex;
   justify-content: space-around;
   padding: 40px 20px;
-  background-color: #f3ede5;
+  background-color: #f9eedb;
 }
 
 .mission-vision div {
@@ -53,6 +69,7 @@
 
 /* Featured Products */
 .featured-products {
+  background-color: var(--sandal);
   text-align: center;
   padding: 40px 20px;
 }
@@ -82,10 +99,3 @@
   color: #223322;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #f3ede5;
-  color: #223322;
-}

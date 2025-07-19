@@ -1,7 +1,7 @@
 .navbar {
-  background-color: #f5efe6; /* warm beige background */
+  background-color: var(--sandal); /* warm beige background */
   color: #234d20; /* dark green text */
-  padding: 10px 20px;
+  padding: 30px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
