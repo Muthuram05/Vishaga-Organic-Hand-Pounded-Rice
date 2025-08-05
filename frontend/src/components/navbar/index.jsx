@@ -3,6 +3,8 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./navbar.css";
 import { DOMAIN_URL } from "../../constant";
 
+import logo from "../../page/assest/logo.jpeg";
+
 export default function Navbar({ setIsLoggedIn, isLoggedIn, isAdminLoggedIn, setIsAdminLoggedIn }) {
   const navigate = useNavigate();
   const location = useLocation(); // Use useLocation hook
@@ -32,7 +34,7 @@ export default function Navbar({ setIsLoggedIn, isLoggedIn, isAdminLoggedIn, set
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/logo.png" alt="Logo" className="logo-image" />
+          <img src={logo} alt="Logo" className="logo-image" width={"100px"} height={"100px"}/>
           <span>Handmade Rice Co.</span>
         </div>
         <ul className="navbar-links">

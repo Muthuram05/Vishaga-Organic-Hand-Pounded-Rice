@@ -34,7 +34,10 @@ export function ProductDetails() {
         "Content-Type": "application/json",
       },
     });
-    if (!response.ok) return;
+    if (!response.ok) {
+      alert("Login to add to cart");
+      return;
+    };
     const data = await response.json();
     const orderData = {
       productId: product.id,
@@ -70,7 +73,7 @@ export function ProductDetails() {
     <div className="product-details">
       <div className="product-main">
         <div className="product-image">
-          {product.imageUrl && <img src={product.imageUrl} alt={product.name} />}
+          {product.images && <img src={`${DOMAIN_URL}${product.images}`} alt={product.name} width={"40px"} />}
         </div>
         <div className="product-info">
           <h2>{product.name}</h2>

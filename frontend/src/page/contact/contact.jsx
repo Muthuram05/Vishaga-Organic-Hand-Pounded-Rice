@@ -1,6 +1,9 @@
 import React from "react";
 import emailjs from '@emailjs/browser';
 
+import rice1 from "../assest/rice1.png";
+import rice2 from "../assest/rice2.png";
+
 import "./style.css";
 
 export function Contact() {
@@ -25,12 +28,12 @@ export function Contact() {
 
       <div className="feedback-container">
         <div className="feedback-card">
-          <div className="feedback-image" />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div className="feedback-image" ><img src={rice1} width={"250px"} height={"120px"} alt="pic"/></div>
+          <p>As usual better price and product quality is good</p>
         </div>
         <div className="feedback-card">
-          <div className="feedback-image" />
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div className="feedback-image"><img src={rice2} width={"250px"} height={"120px"} alt="pic"/></div>
+          <p>Too good aroma and tast love it ,</p>
         </div>
       </div>
 

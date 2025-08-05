@@ -76,6 +76,10 @@
 .featured-products {
   background-color: var(--sandal);
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   padding: 40px 20px;
 }
 

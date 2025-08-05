@@ -3,19 +3,25 @@ import { Card } from "./card";
 
 import "./style.css";
 
-import riceBowl from "../assest/rice-bowl.png";
+import soaking from "../assest/soaking.png";
+import drying from "../assest/drying.png";
+import dehusking from "../assest/dehusking.png";
+import polishing from "../assest/polishing.png";
+import forming from "../assest/forming.png";
+import packing from "../assest/packing.png";
+import shipping from "../assest/shipping.png";
 
 export function Gallery() {
   const cards = [
-    { image: riceBowl, title: "sundrying (2 days)" },
-    { image: riceBowl, title: "Soaking (12 hours)" },
-    { image: riceBowl, title: "Boiling (Depends upon the rice time varies)" },
-    { image: riceBowl, title: "Sundrying (1 Day)" },
-    { image: riceBowl, title: "Dry In the Evening next day" },
-    { image: riceBowl, title: "Handpounding Process" },
-    { image: riceBowl, title: "Dust Removal , Stones , Broken Rice" },
-    { image: riceBowl, title: "Packing" },
-    { image: riceBowl, title: "Shipping" },
+    { image: polishing, title: "sundrying (2 days)" },
+    { image: soaking, title: "Soaking (12 hours)" },
+    { image: dehusking, title: "Boiling (Depends upon the rice time varies)" },
+    { image: polishing, title: "Sundrying (1 Day)" },
+    { image: forming, title: "Dry In the Evening next day" },
+    { image: drying, title: "Handpounding Process" },
+    { image: dehusking, title: "Dust Removal , Stones , Broken Rice" },
+    { image: packing, title: "Packing" },
+    { image: shipping, title: "Shipping" },
   ];
 
   return (
